@@ -110,11 +110,12 @@ input::placeholder {
 }
 
 .Footer {
-    position: absolute;
-    width: 70%;
+    position: relative;
+    width: 100%;
     margin-top: 20rem;
     align-items: center;
     background: #e9ab18;
+    padding: 1%;
 }
 
 .Footer p {
