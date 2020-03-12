@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
+import Footer from'./components/Footer';
 import './components/Todo.css';
 
 class App extends React.Component {
@@ -9,12 +10,12 @@ class App extends React.Component {
     this.state = {
       todos: [
         {
-          task: "Don't Forget to Wind Your Watch! (Click to mark completed)",
+          task: "Go to Circle K (Click to mark completed)",
           id: 1,
           completed: false
         },
         {
-          task: "Homework (Click to mark completed)",
+          task: "Find out when the Mongols Ruled China (Click to mark completed)",
           id: 2,
           completed: false
         }
@@ -60,10 +61,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="header">
-          <h1>No Rest For the Wicked, Am I Right?</h1>
+          <h1>Don't Forget To Wind Your Watch!<br></br> <span className="hint">a to-do list app</span></h1>
           <TodoForm done={this.clearCompleted} addTodo={this.addTodo}/>
         </div>
         <TodoList todos={this.state.todos} toggleTask={this.toggleTask} />
+        <div className="Footer">
+          <Footer />
+        </div>
       </div>
     );
   }

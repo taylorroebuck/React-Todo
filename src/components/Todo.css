@@ -46,6 +46,10 @@ span {
   color: white;
 }
 
+.hint {
+    font-size: 1rem;
+}
+
 .todo-list {
   display: flex;
   flex-flow: row wrap;
@@ -103,4 +107,16 @@ button:hover {
 input::placeholder {
   color: #936b0e;
   opacity: 0.7;
+}
+
+.Footer {
+    position: absolute;
+    width: 60%;
+    margin-top: 20rem;
+    align-items: center;
+    background: #e9ab18;
+}
+
+.Footer p {
+    color: white;
 }
