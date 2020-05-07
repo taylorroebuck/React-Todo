@@ -1,4 +1,6 @@
 import React from 'react';
+import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -22,13 +24,48 @@ class App extends React.Component {
     };
   }
 
+  clearCompleted = e => {
+    e.preventDefault();
+    this.setState({
+      todos: this.state.todos.filter(task => !task.completed)
+    });
+  };
+
+  addTodo = (e, item) => {
+    e.preventDefault();
+    const newTodoItem = {
+      task: item,
+      id: Date.now(),
+      completed: false
+    };
+    this.setState({ todos: [...this.state.todos, newTodoItem] });
+  };
+
+  toggleTask = id => {
+    this.setState(prevState => {
+      return {
+        todos: prevState.todos.map(task => {
+          if (task.id === id) {
+            return {
+              ...task,
+              completed: !task.completed
+            };
+          } else {
+            return task;
+          }
+        })
+      };
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <div className="header">
-          <h1>The To-Dude Abides</h1>
-          <h5>A Big Lebowski-themed to-do list</h5>
+          <h1>The To-Dude Abides<br></br> <span className="hint">a Big Lebowski themed to-do list</span></h1>
+          <TodoForm done={this.clearCompleted} addTodo={this.addTodo}/>
         </div>
+        <TodoList todos={this.state.todos} toggleTask={this.toggleTask} />
       </div>
     );
   }

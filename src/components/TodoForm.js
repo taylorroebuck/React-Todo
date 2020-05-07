@@ -10,6 +10,11 @@ class TodoForm extends React.Component {
         this.setState({ [e.target.name]: e.target.value });
     };
 
+    handleAddItem = e => {
+        this.props.addTodo(e, this.state.todoInput);
+        this.setState({ todoInput: "" });
+    };
+
     render() {
         console.log('rendering form');
         return (
@@ -18,7 +23,7 @@ class TodoForm extends React.Component {
                     <input
                         type='text'
                         name='todoInput'
-                        placeholder='Enter new task'
+                        placeholder='Enter new task, man'
                         value={this.state.todoInput}
                         onChange={this.handleChanges}
                     />
