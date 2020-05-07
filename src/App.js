@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
+import './components/Todo.css';
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -16,7 +17,7 @@ class App extends React.Component {
           completed: false
         },
         {
-          task: "Figure out where Bunny Lebowski is",
+          task: "Buy a new rug (that really ties the room together)",
           id: 2,
           completed: false
         }
