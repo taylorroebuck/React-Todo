@@ -24,8 +24,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Todo App</h2>
+      <div className="App">
+        <div className="header">
+          <h1>The To-Dude Abides</h1>
+          <h5>A Big Lebowski-themed to-do list</h5>
+        </div>
       </div>
     );
   }
